@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sn: MyString
+  registered_at: 2012-03-26 23:01:17
+  last_see_at: 2012-03-26 23:01:17
+
+two:
+  sn: MyString
+  registered_at: 2012-03-26 23:01:17
+  last_see_at: 2012-03-26 23:01:17

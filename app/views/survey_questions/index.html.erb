@@ -1,0 +1,27 @@
+<h1>Listing survey_questions</h1>
+
+<table>
+  <tr>
+    <th>Survey suite</th>
+    <th>Order</th>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @survey_questions.each do |survey_question| %>
+  <tr>
+    <td><%= survey_question.survey_suite_id %></td>
+    <td><%= survey_question.order %></td>
+    <td><%= survey_question.title %></td>
+    <td><%= link_to 'Show', survey_question %></td>
+    <td><%= link_to 'Edit', edit_survey_question_path(survey_question) %></td>
+    <td><%= link_to 'Destroy', survey_question, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Survey question', new_survey_question_path %>
