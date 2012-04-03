@@ -24,3 +24,15 @@ suite.survey_questions << SurveyQuestion.create(:order => 13,:title => '您对�
 suite.survey_questions << SurveyQuestion.create(:order => 14,:title => '您对小区的治安状况总体感受')
 suite.survey_questions << SurveyQuestion.create(:order => 15,:title => '您对小区治安管理工作总体感受')
 suite.survey_questions << SurveyQuestion.create(:order => 16,:title => '您对改善小区治安状况有何宝贵意见')
+
+device = Device.create(:sn => '1234567890ABCDEFG')
+answer = SurveyAnswer.new
+answer.survey_suite = suite
+answer.device = device
+suite.survey_questions.each do |item|
+  answer_item = SurveyAnswerItem.new
+  answer_item.body = item.title + item.order.to_s
+  answer_item.survey_question = item
+  answer.survey_answer_items << answer_item
+end
+answer.save

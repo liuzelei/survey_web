@@ -20,6 +20,17 @@
   <%= @survey_answer.longitude %>
 </p>
 
-
+<% @survey_answer.survey_suite.survey_questions.each do |q| %>
+<b><%= q.order %>.
+<%= q.title %>
+</b>
+<br />
+答案：
+<% answer_item = @survey_answer.survey_answer_items.where("survey_question_id = :survey_question_id", :survey_question_id => q.id).first %>
+<% if answer_item != nil %>
+<%= answer_item.body %>
+<% end %>
+<br />
+<% end %>
 <%= link_to 'Edit', edit_survey_answer_path(@survey_answer) %> |
 <%= link_to 'Back', survey_answers_path %>
