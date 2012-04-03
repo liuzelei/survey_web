@@ -5,6 +5,7 @@ class CreateSurveyAnswers < ActiveRecord::Migration
       t.integer :device_id
       t.string :latitude
       t.string :longitude
+      t.datetime :recorded_at
 
       t.timestamps
     end
