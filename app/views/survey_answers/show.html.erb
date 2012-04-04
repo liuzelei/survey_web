@@ -1,42 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Survey suite:</b>
-  <%= @survey_answer.survey_suite_id %>
-</p>
-
-<p>
-  <b>Device:</b>
-  <%= @survey_answer.device_id %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @survey_answer.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @survey_answer.longitude %>
-</p>
 
 <% @survey_answer.survey_suite.survey_questions.each do |q| %>
 <b><%= q.order %>.
 <%= q.title %>
 </b>
-<br />
 答案：
 <% answer_item = @survey_answer.survey_answer_items.where("survey_question_id = :survey_question_id", :survey_question_id => q.id).first %>
 <% if answer_item != nil %>
 <%= answer_item.body %>
 <% end %>
 <br />
-
 <% q.survey_question_items.each do |i| %>
 <%= i.order %>,
 <%= i.body %>
 <% end %>
-
+<br />
 <% end %>
-<%= link_to 'Edit', edit_survey_answer_path(@survey_answer) %> |
-<%= link_to 'Back', survey_answers_path %>
+<%= link_to '返回', survey_answers_path %>

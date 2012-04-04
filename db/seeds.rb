@@ -87,22 +87,22 @@ q15.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "比
 q15.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "不太满意")
 q15.survey_question_items << SurveyQuestionItem.create(:order => 4,:body => "不太了解")
 
-suite << q1
-suite << q2
-suite << q3
-suite << q4
-suite << q5
-suite << q6
-suite << q7
-suite << q8
-suite << q9
-suite << q10
-suite << q11
-suite << q12
-suite << q13
-suite << q14
-suite << q15
-suite << q16
+suite.survey_questions << q1
+suite.survey_questions << q2
+suite.survey_questions << q3
+suite.survey_questions << q4
+suite.survey_questions << q5
+suite.survey_questions << q6
+suite.survey_questions << q7
+suite.survey_questions << q8
+suite.survey_questions << q9
+suite.survey_questions << q10
+suite.survey_questions << q11
+suite.survey_questions << q12
+suite.survey_questions << q13
+suite.survey_questions << q14
+suite.survey_questions << q15
+suite.survey_questions << q16
 
 device = Device.create(:sn => '1234567890ABCDEFG')
 answer = SurveyAnswer.new

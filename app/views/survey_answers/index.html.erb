@@ -1,29 +1,15 @@
-<h1>Listing survey_answers</h1>
+<h1>调查问卷记录</h1>
 
 <table>
   <tr>
-    <th>Survey suite</th>
-    <th>Device</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>采集时间</th>
+    <th>操作</th>
   </tr>
 
 <% @survey_answers.each do |survey_answer| %>
   <tr>
-    <td><%= survey_answer.survey_suite_id %></td>
-    <td><%= survey_answer.device_id %></td>
-    <td><%= survey_answer.latitude %></td>
-    <td><%= survey_answer.longitude %></td>
-    <td><%= link_to 'Show', survey_answer %></td>
-    <td><%= link_to 'Edit', edit_survey_answer_path(survey_answer) %></td>
-    <td><%= link_to 'Destroy', survey_answer, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= survey_answer.recorded_at %></td>
+    <td><%= link_to '查看', survey_answer %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Survey answer', new_survey_answer_path %>
