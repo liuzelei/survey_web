@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Order:</b>
+  <%= @survey_question_item.order %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @survey_question_item.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_survey_question_item_path(@survey_question_item) %> |
+<%= link_to 'Back', survey_question_items_path %>
