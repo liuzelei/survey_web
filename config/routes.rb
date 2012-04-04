@@ -2,7 +2,9 @@ SurveyWeb::Application.routes.draw do
   resources :survey_question_items
 
   get "api/upload"
-
+  post "api/upload"
+  get "api/test"
+  
   resources :survey_questions
 
   resources :survey_answers

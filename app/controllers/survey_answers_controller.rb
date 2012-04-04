@@ -2,7 +2,9 @@ class SurveyAnswersController < ApplicationController
   # GET /survey_answers
   # GET /survey_answers.json
   def index
-    @survey_answers = SurveyAnswer.all
+    @suite = SurveySuite.find(1)
+    @survey_answers = @suite.survey_answers
+    
 
     respond_to do |format|
       format.html # index.html.erb

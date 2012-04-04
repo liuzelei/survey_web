@@ -28,4 +28,7 @@ class ApiController < ApplicationController
     
     answer.save
   end
+  
+  def test
+  end
 end

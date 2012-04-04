@@ -24,6 +24,15 @@ q14 = SurveyQuestion.create(:order => 14,:title => '您对小区的治安状况�
 q15 = SurveyQuestion.create(:order => 15,:title => '您对小区治安管理工作总体感受')
 q16 = SurveyQuestion.create(:order => 16,:title => '您对改善小区治安状况有何宝贵意见')
 
+q1.survey_question_items << SurveyQuestionItem.create(:order => 1,:body => "工人")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "农民")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "商人")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "学生")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "自由职业者")
+
+q2.survey_question_items << SurveyQuestionItem.create(:order => 1,:body => "男")
+q2.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "女")
+
 q3.survey_question_items << SurveyQuestionItem.create(:order => 1,:body => "1年以内")
 q3.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "1年至5年")
 q3.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "5年以上")
@@ -110,7 +119,7 @@ answer.survey_suite = suite
 answer.device = device
 suite.survey_questions.each do |item|
   answer_item = SurveyAnswerItem.new
-  answer_item.body = item.title + item.order.to_s
+  answer_item.body = "A" + item.order.to_s
   answer_item.survey_question = item
   answer.survey_answer_items << answer_item
 end
