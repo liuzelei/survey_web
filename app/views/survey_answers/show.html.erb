@@ -31,6 +31,12 @@
 <%= answer_item.body %>
 <% end %>
 <br />
+
+<% q.survey_question_items.each do |i| %>
+<%= i.order %>,
+<%= i.body %>
+<% end %>
+
 <% end %>
 <%= link_to 'Edit', edit_survey_answer_path(@survey_answer) %> |
 <%= link_to 'Back', survey_answers_path %>
