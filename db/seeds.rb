@@ -124,3 +124,4 @@ suite.survey_questions.each do |item|
   answer.survey_answer_items << answer_item
 end
 answer.save
+User.create(:email => "admin@test.com", :password => "123456", :password_confirmation => "123456")
