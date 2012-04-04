@@ -1,13 +1,106 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree .
+ *= require_tree . 
 */
+
+@charset "utf-8";
+*{margin: 0px;padding: 0px;}
+html, body {height: 100%;}
+body{height: 100%; font-family: "微软雅黑";font-size: 14px;font-weight: normal; background: #f4f4f4; color: #333333;}
+img {border: none;}
+clear{ clear:both;}
+.green_color{ color: #61a903;}
+.gray_color{ color: #333333;}
+.red_color{color:#e50202;}
+
+/********************** head ********************************************/
+#header {width: 100%; height: 80px; background: #162f54; color: #ffffff; font-size:16px;}
+.logo{float: left; padding: 10px 0 0 30px;}
+.header_right{ float:right; padding: 30px 30px 0 0;}
+#nav{width: 100%; height: 40px; color: #ffffff; background:#0d75af url(../images/nav_back.gif) repeat-x 0 0; border-bottom:1px solid #8cdbff; border-top:1px solid #4dafeb;}
+#nav ul{ margin-left: 30px;}
+#nav li{width: 100px; height: 32px; display: inline;text-align: center;float: left;padding-top: 10px;}
+.current{width: 100px; height: 32px; background:#2ba8d2;}
+.subnav{width: 100%; padding: 8px 0; background: #2ba8d2; color: #ffffff;}
+.subnav ul{ margin-left: 30px;}
+.subnav li{width: 100px;display: inline;text-align: center;padding-right: 30px;}
+
+/********************** foot ********************************************/
+#footer{width: 100%; height: 180px; background: #e6e6e6; font-size:14px; border-top: 1px solid #c3c3c3;}
+#footer p{ line-height: 24px; color: #666666;}
+.groupone{ width: 500px; margin: 20px 0px 0 30px; text-align:left; float: left;}
+.grouptwo{ width: 100px; margin: 20px 30px 0 30px; text-align:left; float: left;}
+.grouthree{ width: 200px; margin: 20px 0px 0 0px; text-align:left; float: left;}
+.btn_1{ width: 80px; background: #23afde; text-align:center; color: #ffffff; padding: 6px 0 8px 0; margin: 8px 0 0 0; cursor:pointer}
+
+/********************** sidebar_left********************************************/
+.box{ min-height:500px;_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>500?"500px":"");  margin: 15px 15px;}
+.sidebar_left{ width: 290px; margin: 10px 10px 10px 20px; float:left;}
+.board{width: 290px; margin: 0px 0px 20px 0px; float:left;}
+.board h2{font-size: 18px;font-weight: normal; margin-bottom: 20px;}
+.board p{ line-height: 26px; color: #666666;}
+
+.base_info{width: 290px; margin: 0px 0px 20px 0px; float:left;}
+.base_info h2{font-size: 18px;font-weight: normal; margin-bottom: 20px;}
+.base_info p{ line-height: 45px; color: #666666;}
+.input_1{ width:200px; height: 25px;font-family: "微软雅黑"; color: #666666; font-size: 12px; text-align:left; padding: 5px 5px 3px 5px; border: 1px solid #e3e9ef; border-top: 1px solid #abadb3;}
+select{width:211px; height:35px; border: 1px solid #e3e9ef; border-top: 1px solid #abadb3; padding: 7px 10px;  font-family: "微软雅黑"; color: #666666; font-size: 12px;}
+
+.btn_box{width: 290px; margin: 20px 0px 20px 0px; float:left;}
+.btn_2{ width:80px; height:28px; text-align: center; color: #ffffff; font-family: "微软雅黑"; background:#26a3cc url(../images/btn_01.gif) repeat-x 0 0; margin:0 20px 0 0; border:0px; cursor:pointer; border:1px solid #0d87ae; padding:0;}
+.btn_2:hover{width:80px; height:28px;background:#1f9cc5; cursor:pointer}
+
+/********************** sidebar_right********************************************/
+
+.sidebar_right{ height:100%; margin: 20px 0 10px 320px;}
+.list_1{background: #ffffff ; border: 1px solid #cccccc; margin: 0px 0 20px 0px;}
+.list_1 h2{font-size: 18px;font-weight: normal; height: 34px; padding: 8px 0 0 15px; background: #e9e9e9 url(../images/img_01.gif) repeat-x 0 0;}
+.list_1_img{ width: 650px; height:355px; margin: 10px auto; padding:0; text-align:center;}
+.list_title{height: 42px; background: #e9e9e9 url(../images/img_01.gif) repeat-x 0 0;}
+.list_title_left{ width: 400px;font-size: 18px;font-weight: normal;padding: 8px 0 0 15px; float:left;}
+.list_title_right{float:right; text-align:right;}
+.btn_right{ width:80px; height:28px; text-align: center; color: #ffffff; font-family: "微软雅黑"; background:#26a3cc url(../images/btn_01.gif) repeat-x 0 0; margin:5px 5px 0 0; border:0px; cursor:pointer; border:1px solid #0d87ae; padding:0;}
+.btn_right:hover{width:80px; height:28px;background:#1f9cc5; cursor:pointer}
+
+.tab_content{ margin: 15px;}
+.warning{ height:40px; font-size:12px; color: #666666; background: #fffbcc  url(../images/exclamation.png) no-repeat 15px 12px; border:1px solid #e6db55; margin-bottom:10px;}
+.close {position:relative;right:5px;top:5px;float: right;}
+.warning p{padding: 10px 40px 0 40px;}
+.information{ height:40px; font-size:12px;color: #666666; background: #dbe3ff  url(../images/information.png) no-repeat 15px 12px; border:1px solid #a2b4ee; margin-bottom:10px;}
+.information p{padding: 10px 40px 0 40px;}
+.success{ height:40px;font-size:12px;color: #666666;  background: #d5ffce  url(../images/tick_circle.png) no-repeat 15px 12px; border:1px solid #9adf8f; margin-bottom:10px;}
+.success p{padding: 10px 40px 0 40px;}
+.error{ height:40px;font-size:12px;color: #666666; background: #ffcece  url(../images/cross.png) no-repeat 15px 12px; border:1px solid #df8f8f; margin-bottom:10px;}
+.error p{padding: 10px 40px 0 40px;}
+.table1{ width:100%; line-height: 26px;}
+.table1 th{ height:22px; text-align:left; padding: 10px;}
+.table1 td{ height:22px; color: #333333; text-align:left; padding: 10px;}
+.table1 td a{ color: #61a903; text-decoration:none;}
+.table1 td a:hover{ color: #61a903; text-decoration: underline;} 
+.backcolor{ height:22px; background:#f3f3f3; border-top: 1px solid #dddddd;padding: 10px;}
+
+/************************* link *****************************/
+.header_right a{ color: #ffffff; text-decoration: none;}
+.header_right a:hover{ color: #ffffff; text-decoration: underline;}
+#nav a{ color: #ffffff; text-decoration:none;}
+#nav a:hover{ color: #ffffff;text-decoration:none;}
+.subnav a{ color: #ffffff; text-decoration:none;}
+.subnav a:hover{ color: #ffffff; text-decoration:none;}
+#footer p a{color: #666666; text-decoration:none;}
+#footer p a:hover{color: #333333; text-decoration:underline;}
+.btn_1 a{color: #ffffff;text-decoration:none;}
+.btn_1 a:hover{color: #ffffff;text-decoration:underline;}
+
+
+
+#screenshot{
+ position:absolute;
+ border:0px solid #ccc;
+ background:#333;
+ padding:2px;
+ display:none;
+ color:#fff;
+ }
