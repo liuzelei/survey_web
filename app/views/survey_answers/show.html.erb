@@ -17,4 +17,29 @@
 <% end %>
 <br />
 <% end %>
-<%= link_to '返回', survey_answers_path %>
+
+
+
+<div class="list_1">
+  <div class="list_title">
+    <div class="list_title_left">调查问卷记录[<%= link_to '返回', survey_answers_path, { :class => 'screenshot' } %>]</div>
+    <div class="list_title_right">
+    </div>
+  </div>
+  <div class="tab_content">
+    <table width="100%" cellpadding="0" cellspacing="0" class="table1">
+      <tbody>
+		<% @survey_answers.each do |survey_answer| %>
+		<tr>
+			<td><%= survey_answer.id %></td>
+			<td><%= survey_answer.recorded_at %></td>
+			<% survey_answer.survey_answer_items.each do |item| %>
+		    <td><%= item.body %></td>
+			<% end %>
+			<td><%= link_to '查看', survey_answer, { :class => 'screenshot' } %></td>
+		</tr>
+		<% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

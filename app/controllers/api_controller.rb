@@ -17,6 +17,7 @@ class ApiController < ApplicationController
     answer.survey_suite = suite
     answer.latitude = data["Latitude"]
     answer.longitude = data["Longitude"]
+    answer.image = params[:image]
     
     data["Answer"].each do |item|
       question = SurveyQuestion.find(item.key)

@@ -8,17 +8,21 @@
     <table width="100%" cellpadding="0" cellspacing="0" class="table1">
       <thead>
         <tr>
+			<th width="100">序号</th>
+			<th width="150">填写时间</th>
 			<% @suite.survey_questions.each do |q| %>
 			<th width="100">
 			<%= q.order %>
 			</th>
 			<% end %>
-			<th width="100"></th>
+			<th width="100">操作</th>
         </tr>
       </thead>
       <tbody>
 		<% @survey_answers.each do |survey_answer| %>
 		<tr>
+			<td><%= survey_answer.id %></td>
+			<td><%= survey_answer.recorded_at %></td>
 			<% survey_answer.survey_answer_items.each do |item| %>
 		    <td><%= item.body %></td>
 			<% end %>
