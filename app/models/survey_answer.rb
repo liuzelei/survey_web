@@ -3,7 +3,7 @@ class SurveyAnswer < ActiveRecord::Base
   belongs_to :survey_question
   has_many :survey_answer_items
   belongs_to :device
-  
+
   # before_create :randomize_file_name
   #   has_attached_file :image,
   #                     :url  => "/uploads/pictures/:date_path/:basename.:extension",

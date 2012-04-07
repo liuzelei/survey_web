@@ -3,7 +3,7 @@ class SurveyAnswersController < ApplicationController
   # GET /survey_answers.json
   def index
     @suite = SurveySuite.find(1)
-    @survey_answers = @suite.survey_answers
+    @survey_answers = @suite.survey_answers.order("id desc").page(params[:page])
     
 
     respond_to do |format|
