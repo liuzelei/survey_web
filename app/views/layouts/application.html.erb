@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>问卷调查</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>问卷调查</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="/stylesheet/layout.css" rel="stylesheet" type="text/css">
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<div class="subnav">
+	  <ul>
+	    <li><a href="/">问卷调查</a></li>
+	    <li>
+			<% if user_signed_in? %>
+				<%= link_to "注销", destroy_user_session_path, :method => :delete %>
+		  	<% end %>
+		</li>
+	  </ul>
+	</div>
+	<%= yield :content %>
 </html>

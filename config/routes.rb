@@ -1,6 +1,6 @@
 SurveyWeb::Application.routes.draw do
   devise_for :users
-
+  
   resources :survey_question_items
 
   get "api/upload"
