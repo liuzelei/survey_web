@@ -1,4 +1,5 @@
 class SurveyQuestionsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /survey_questions
   # GET /survey_questions.json
   def index
