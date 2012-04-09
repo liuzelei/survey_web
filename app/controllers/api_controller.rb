@@ -3,7 +3,7 @@ class ApiController < ApplicationController
   def upload
     data = JSON.parse(params[:data])
     deviceId = data["DevicedId"]
-    device = Device.find_by_sn(devicdId)
+    device = Device.find_by_sn(deviceId)
     if (device = nil)
       device.sn = deviceId
       device.save
