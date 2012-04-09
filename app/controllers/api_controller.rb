@@ -4,7 +4,8 @@ class ApiController < ApplicationController
     data = JSON.parse(params[:data])
     deviceId = data["DevicedId"]
     device = Device.find_by_sn(deviceId)
-    if (device = nil)
+    if (device == nil)
+      device = Device.new
       device.sn = deviceId
       device.save
     end
