@@ -20,13 +20,13 @@ class ApiController < ApplicationController
     answer.longitude = data["Longitude"]
     answer.image = params[:image]
     
-    data["Answer"].each do |item|
-      question = SurveyQuestion.find(item.key)
-      answer_item = SurveyAnswerItem.new
-      answer_item.body = item.value
-      answer_item.survey_question = question
-      answer.survey_answer_items << answer_item
-    end
+    # data["Answer"].each do |item|
+    #   question = SurveyQuestion.find(item.key)
+    #   answer_item = SurveyAnswerItem.new
+    #   answer_item.body = item.value
+    #   answer_item.survey_question = question
+    #   answer.survey_answer_items << answer_item
+    # end
     
     answer.save
   end
