@@ -1,6 +1,12 @@
 <div class="list_1">
   <div class="list_title">
-    <div class="list_title_left">调查问卷记录[<%= link_to "照片", @survey_answer。image.url, { :class => 'screenshot', :target => "_blank" } %>][<%= link_to '返回', survey_answers_path, { :class => 'screenshot' } %>]</div>
+    <div class="list_title_left">调查问卷记录
+	<% if @survey_answer。image == nil %>
+[无照片]
+	<% else %>
+[<%= link_to "照片", @survey_answer。image.url, { :class => 'screenshot', :target => "_blank" } %>]
+	<% end %>
+[<%= link_to '返回', survey_answers_path, { :class => 'screenshot' } %>]</div>
     <div class="list_title_right">
     </div>
   </div>
