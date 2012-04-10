@@ -27,8 +27,8 @@ q16 = SurveyQuestion.create(:order => 16,:title => '您对改善小区治安状�
 q1.survey_question_items << SurveyQuestionItem.create(:order => 1,:body => "工人")
 q1.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "农民")
 q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "商人")
-q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "学生")
-q1.survey_question_items << SurveyQuestionItem.create(:order => 3,:body => "自由职业者")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 4,:body => "学生")
+q1.survey_question_items << SurveyQuestionItem.create(:order => 5,:body => "自由职业者")
 
 q2.survey_question_items << SurveyQuestionItem.create(:order => 1,:body => "男")
 q2.survey_question_items << SurveyQuestionItem.create(:order => 2,:body => "女")
