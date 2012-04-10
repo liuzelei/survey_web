@@ -22,7 +22,7 @@
 		<% @survey_answers.each do |survey_answer| %>
 		<tr>
 			<td><%= survey_answer.id %></td>
-			<td><%= survey_answer.recorded_at %></td>
+			<td><%= survey_answer.recorded_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
 			<% survey_answer.survey_answer_items.each do |item| %>
 		    <td><%= item.body %></td>
 			<% end %>
