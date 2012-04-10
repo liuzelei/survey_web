@@ -113,15 +113,15 @@ suite.survey_questions << q14
 suite.survey_questions << q15
 suite.survey_questions << q16
 
-device = Device.create(:sn => '1234567890ABCDEFG')
-answer = SurveyAnswer.new
-answer.survey_suite = suite
-answer.device = device
-suite.survey_questions.each do |item|
-  answer_item = SurveyAnswerItem.new
-  answer_item.body = "A" + item.order.to_s
-  answer_item.survey_question = item
-  answer.survey_answer_items << answer_item
-end
-answer.save
+device = Device.create(:sn => 'FB00068106')
+# answer = SurveyAnswer.new
+# answer.survey_suite = suite
+# answer.device = device
+# suite.survey_questions.each do |item|
+#   answer_item = SurveyAnswerItem.new
+#   answer_item.body = "A" + item.order.to_s
+#   answer_item.survey_question = item
+#   answer.survey_answer_items << answer_item
+# end
+# answer.save
 User.create(:email => "admin@test.com", :password => "123456", :password_confirmation => "123456")
