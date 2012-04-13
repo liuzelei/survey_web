@@ -15,7 +15,7 @@
 			<%= q.order %>
 			</th>
 			<% end %>
-			<th width="100">操作</th>
+			<th width="200">操作</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +26,10 @@
 			<% survey_answer.survey_answer_items.each do |item| %>
 		    <td><%= item.body %></td>
 			<% end %>
-			<td><%= link_to '查看', survey_answer, { :class => 'screenshot' } %></td>
+			<td>
+				<%= link_to '查看', survey_answer, { :class => 'screenshot' } %>
+				<%= link_to '删除', survey_answer, confirm: '确定删除?', method: :delete %>
+			</td>
 		</tr>
 		<% end %>
       </tbody>

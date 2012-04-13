@@ -6,18 +6,26 @@
     </div>
   </div>
   <div class="tab_content">
-    <table width="100%" cellpadding="0" cellspacing="0" class="table1">
+    <table width="100%" border="1" cellpadding="0" cellspacing="0" class="table1">
+      <thead>
+        <tr>
+			<th width="10">序号</th>
+			<th width="200">题干</th>
+			<th width="100">答案</th>
+			<th width="400">选项</th>
+        </tr>
+      </thead>
       <tbody>
 		<% @survey_answer.survey_suite.survey_questions.each do |q| %>
 		<tr>
-			<td>
-				<b><%= q.order %>.<%= q.title %></b>:<% answer_item = @survey_answer.survey_answer_items.where("survey_question_id = :survey_question_id", :survey_question_id => q.id).first %><% if answer_item != nil %>
+			<td><%= q.order %></td>
+			<td style="text-align:left"><%= q.title %></td>
+			<td style="text-align:left">
+				<% answer_item = @survey_answer.survey_answer_items.where("survey_question_id = :survey_question_id", :survey_question_id => q.id).first %><% if answer_item != nil %>
 				<%= answer_item.body %>
 				<% end %>
 			</td>
-		</tr>
-		<tr>
-			<td>
+			<td style="text-align:left">
 				<% q.survey_question_items.each do |i| %>
 				<%= i.order %>,
 				<%= i.body %>
