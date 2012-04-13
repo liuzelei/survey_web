@@ -8,7 +8,8 @@ SurveyWeb::Application.routes.draw do
   get "api/test"
   
   resources :survey_questions
-
+  
+  get "survey_answers/export"
   resources :survey_answers
 
   resources :survey_answer_items

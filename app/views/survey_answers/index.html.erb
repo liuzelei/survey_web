@@ -1,6 +1,6 @@
 <div class="list_1">
   <div class="list_title">
-    <div class="list_title_left">调查问卷记录</div>
+    <div class="list_title_left">调查问卷记录 <%= link_to '[导出]', { :action => "export", :controller => "survey_answers" }, { :class => 'screenshot' } %></div>
     <div class="list_title_right">
     </div>
   </div>
@@ -27,8 +27,8 @@
 		    <td><%= item.body %></td>
 			<% end %>
 			<td>
-				<%= link_to '查看', survey_answer, { :class => 'screenshot' } %>
-				<%= link_to '删除', survey_answer, confirm: '确定删除?', method: :delete %>
+				<%= link_to '[查看]', survey_answer, { :class => 'screenshot' } %>
+				<%= link_to '[删除]', survey_answer, confirm: '确定删除?', method: :delete %>
 			</td>
 		</tr>
 		<% end %>

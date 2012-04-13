@@ -10,9 +10,15 @@ class SurveyAnswersController < ApplicationController
       format.json { render json: @survey_answers }
     end
   end
+  
+  def export
+    headers['Content-Type'] = "application/vnd.ms-excel"
+    headers['Content-Disposition'] = 'attachment; filename="export.xls"'
+    headers['Cache-Control'] = ''
+    @suite = SurveySuite.find(1)
+    @survey_answers = @suite.survey_answers.order("id desc")
+  end
 
-  # GET /survey_answers/1
-  # GET /survey_answers/1.json
   def show
     @survey_answer = SurveyAnswer.find(params[:id])
     
@@ -22,8 +28,6 @@ class SurveyAnswersController < ApplicationController
     end
   end
 
-  # GET /survey_answers/new
-  # GET /survey_answers/new.json
   def new
     @survey_answer = SurveyAnswer.new
 
@@ -33,13 +37,10 @@ class SurveyAnswersController < ApplicationController
     end
   end
 
-  # GET /survey_answers/1/edit
   def edit
     @survey_answer = SurveyAnswer.find(params[:id])
   end
 
-  # POST /survey_answers
-  # POST /survey_answers.json
   def create
     @survey_answer = SurveyAnswer.new(params[:survey_answer])
 
@@ -54,8 +55,6 @@ class SurveyAnswersController < ApplicationController
     end
   end
 
-  # PUT /survey_answers/1
-  # PUT /survey_answers/1.json
   def update
     @survey_answer = SurveyAnswer.find(params[:id])
 
@@ -70,8 +69,6 @@ class SurveyAnswersController < ApplicationController
     end
   end
 
-  # DELETE /survey_answers/1
-  # DELETE /survey_answers/1.json
   def destroy
     @survey_answer = SurveyAnswer.find(params[:id])
     @survey_answer.destroy

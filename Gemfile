@@ -9,6 +9,7 @@ gem 'mysql2'
 gem "paperclip", "~> 3.0"
 gem "devise", "~> 2.0"
 gem 'kaminari'
+#gem 'roo'
 #gem 'sqlite3'
 
 # Gems used only for assets and not required

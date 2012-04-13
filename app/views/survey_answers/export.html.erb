@@ -1,0 +1,24 @@
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+		<th width="100">序号</th>
+		<th width="400">填写时间</th>
+		<% @suite.survey_questions.each do |q| %>
+		<th width="100">
+		<%= q.order %>
+		</th>
+		<% end %>
+    </tr>
+  </thead>
+  <tbody>
+	<% @survey_answers.each do |survey_answer| %>
+	<tr>
+		<td><%= survey_answer.id %></td>
+		<td><%= survey_answer.recorded_at == nil ? "" : survey_answer.recorded_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+		<% survey_answer.survey_answer_items.each do |item| %>
+	    <td><%= item.body %></td>
+		<% end %>
+	</tr>
+	<% end %>
+  </tbody>
+</table>
