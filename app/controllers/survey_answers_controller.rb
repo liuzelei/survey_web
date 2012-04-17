@@ -17,6 +17,7 @@ class SurveyAnswersController < ApplicationController
     headers['Cache-Control'] = ''
     @suite = SurveySuite.find(1)
     @survey_answers = @suite.survey_answers.order("id desc")
+    render :layout => false
   end
 
   def show
