@@ -11,7 +11,7 @@ class ApiController < ApplicationController
     end
     device.last_see_at = Time.now
     
-    suite = SurveySuite.find(data["SuiteId"])
+    suite = SurveySuite.find_by_id(data["SuiteId"])
     answer = SurveyAnswer.new
     answer.recorded_at = data["Time"]
     answer.device = device
@@ -21,7 +21,7 @@ class ApiController < ApplicationController
     answer.image = params[:image]
     
     data["Answer"].each do |item|
-      question = SurveyQuestion.find(item["key"])
+      question = SurveyQuestion.find_by_id(item["key"])
       answer_item = SurveyAnswerItem.new
       answer_item.body = item["value"]
       answer_item.survey_question = question
